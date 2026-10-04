@@ -582,3 +582,164 @@ footer {
   padding-top: 10px;
   font-size: 14px;
 }
+/* ✅ Mobile Friendly Layout */
+@media (max-width: 768px) {
+  /* Navbar Compact + Hamburger */
+  .header {
+    padding: 12px 6%;
+    background: black;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: black;
+    width: 100%;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    z-index: 999;
+    padding: 5px 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    font-size: 14px;
+    padding: 8px 10px;
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links a:hover {
+    background: orangered;
+    color: white;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* First Page: Photo Up, Content Down */
+  .home {
+    flex-direction: column;
+    padding: 90px 6% 40px;
+    gap: 25px;
+    min-height: auto;
+  }
+
+  .img-box {
+    order: -1; /* move image above content */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-box img {
+    width: 85%;
+    max-width: 320px;
+    border-radius: 50%;
+  }
+
+  .home-content {
+    text-align: center;
+    width: 100%;
+  }
+
+  .home-content h1 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .home-content p {
+    font-size: 15px;
+    margin: 15px 0;
+  }
+
+  .btn-box {
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* Second Page: Full Black About Section */
+  .about {
+    flex-direction: column;
+    width: 100%;
+    padding: 80px 6% 40px;
+    gap: 25px;
+    background: black !important;
+  }
+
+  .about-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-img img {
+    width: 85%;
+    max-width: 320px;
+    height: auto;
+    box-shadow: 0 0 25px orangered, 0 0 50px orangered;
+  }
+
+  .about-content {
+    text-align: center;
+    color: white;
+    width: 100%;
+  }
+
+  .about-content h2,
+  .about-content h3,
+  .about-content p {
+    color: white;
+  }
+}
+/* ✅ Fix Navbar Overlap in Phone View */
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    z-index: 1000;
+    padding: 12px 6%; /* compact header */
+  }
+
+  /* Push all sections below navbar */
+  .home,
+  .about,
+  .skills,
+  #education,
+  #projects,
+  .contact-form {
+    margin-top: 70px; /* ensures content starts below navbar */
+  }
+
+  /* Compact navbar links */
+  .navbar a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  /* Dropdown menu spacing */
+  .nav-links {
+    top: 55px; /* dropdown starts just below header */
+  }
+}
